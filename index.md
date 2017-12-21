@@ -14,18 +14,6 @@ protocol. Users should verify this information via testing.
 
 [cloud_vpn]: https://cloud.google.com/compute/docs/vpn/overview
 
-Using Cloud VPN with Alibaba Cloud Virtual Router 
-
- ![image alt text](./images/image_0.png)
-
-Contents
-Introduction	3
-Topology	4
-Preparation	5
-Configuration - Alibaba Cloud	7
-Configuration - Google Cloud	21
-Configuration - Verification	29
-
 
 ## Introduction
 This guide walks you through the process of configuring the Alibaba Virtual Private Cloud (VPC) Network Gateway (also referred to as the VRouter within the Alibaba console) for integration with the [Google Cloud VPN service](https://cloud.google.com/compute/docs/vpn/). This information is provided as an example only.  If utilizing this guidance to configure your Alibaba Cloud implementation, be sure to substitute the correct IP information for your environment. Also note, this guide is not meant to be a comprehensive overview of IPsec and assumes users have a basic familiarity with the IPsec protocol.
@@ -37,10 +25,6 @@ This guide will describe the following VPN topology:
                      
 
 ![image alt text](./images/image_1.png)
-
-
-
-
  
 ## Preparation
 
@@ -63,8 +47,6 @@ This guide is intended to assist in the creation of IPsec connectivity to the Go
 The IPsec connectivity will utilize a pre-shared key (PSK) that you provide for authentication.
 
 
-
- 
 ## Getting Started
 
 The first step is to establish the base networking environment in Alibaba Cloud. Alibaba provides [documentation ](https://www.alibabacloud.com/help/doc-detail/53902.htm)for getting started with Alibaba Cloud networking. The basic concepts to understand are:
