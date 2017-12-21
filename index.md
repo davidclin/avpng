@@ -24,7 +24,7 @@ This guide will describe the following VPN topology:
 1.	A site-to-site policy based IPSec VPN tunnel configuration using static routing
                      
 
-![image alt text](image_1.png)
+![image alt text](./images/image_1.png)
 
 
 
@@ -82,13 +82,13 @@ To get started, login to the Alibaba Management Console and select Virtual Priva
 
 For this example, create a new VPC to connect to the Google Cloud Platform using the Alibaba VPC Wizard: 
 
-![image alt text](image_2.png)
+![image alt text](./images/image_2.png)
 
 
 Step 1	Click "VPC" in the left pane window, followed by the Region (eg: US East (Virginia)) then the **Create** **VPC **button
-![image alt text](image_3.png)
+![image alt text](./images/image_3.png)
 Step 2	Configure the VPC settings:
-![image alt text](image_4.png)
+![image alt text](./images/image_4.png)
 
 
  
@@ -100,10 +100,10 @@ The following settings are to be configured:
 
 Step 3	After completing the form, click on **Create VPC **to proceed to the next step
 
- ![image alt text](image_5.png)
+ ![image alt text](./images/image_5.png)
 Step 4	Click on **Next Step**
 Step 5	Configure the VSwitch settings
- ![image alt text](image_6.png)
+ ![image alt text](./images/image_6.png)
 The following settings are to be configured:
 1)	**VSwitch Name **- Enter the name of the VSwitch
 2)	**Zone **- Select a zone of the VSwitch. Zones are physical areas with independent power grids and networks in one region. Alibaba recommends creating different VSwitches in different zones to achieve disaster recovery.
@@ -112,11 +112,11 @@ The following settings are to be configured:
 
 Step 6	Click on **Create VSwitch**
 
- ![image alt text](image_7.png)
+ ![image alt text](./images/image_7.png)
 Step 7	Click on **Done**
 The VPC configuration is now complete.
 
- ![image alt text](image_8.png)
+ ![image alt text](./images/image_8.png)
 
 
 
@@ -147,68 +147,68 @@ Step 1	Get the **FlexVPNGW VPN gateway **from Alibaba Marketplace
 a.	Click the "VPN FlexGW IPsec VPN on CentOS 6.5" icon that appears in the Alibaba Marketplace webpage at [https://www.alibaba.com/marketplace](https://www.alibaba.com/marketplace)
 b.	(Optionally) Search for “flexgw” in the search box.
 
-![image alt text](image_9.png)
-![image alt text](image_10.png)
+![image alt text](./images/image_9.png)
+![image alt text](./images/image_10.png)
 c.	Choose your preferred Region and Pricing Plan
 (Note: The pricing plan is NOT for the FlexGW IPsec VPN gateway software but for the CentOS virtual ECS instance required to run the software. You can use the ecs.xn4.small instance provided as the default.) 
- ![image alt text](image_11.png)
+ ![image alt text](./images/image_11.png)
 d.	Click **Advanced Buy **then click on **Launch with ECS**. The Advanced Buy option will redirect you to the ECS Advanced Purchase page where you can choose specific instance configurations (eg: Datacenter Region and Zone, instance type, network type, security group, Operating System, etc.)
 
- ![image alt text](image_12.png)
+ ![image alt text](./images/image_12.png)
 
 e.	Under **Advanced Purchases**, Choose the **Datacenter Region **and **Zone**.
 
- ![image alt text](image_13.png)
+ ![image alt text](./images/image_13.png)
 
 f.	Under **Instance Type**, Choose your preferred Instance Type.
-![image alt text](image_14.png)
+![image alt text](./images/image_14.png)
  
 
 g.	Choose the **VPC **and **VSwitch **instance created from a previous task.
 
 h.	Choose the Default Security Group provided. If a default security group is not an option, create and enable a new Security Group that allows **HTTP Port 80**, **HTTPS Port 443**, **ICMP Protocol**, **SSH Port 22**, and **Remote Desktop Port 3389**:
-![image alt text](image_15.png)
+![image alt text](./images/image_15.png)
  
 
 i.	Leave the Operating System to default (eg: FlexGW IPSec VPN on CentOS)
 
- ![image alt text](image_16.png)
+ ![image alt text](./images/image_16.png)
 
 j.	Under **Security Setting**, configure the password to access the FlexGW VPN UI. Write this password down somewhere as you will need this later to access the FlexGW VPN gateway’s web interface.
 
- ![image alt text](image_17.png)
+ ![image alt text](./images/image_17.png)
 
 k.	Under **Purchase Plan**, Enter an Instance Name
 
- ![image alt text](image_18.png)
+ ![image alt text](./images/image_18.png)
 
 l.	Overview the configuration and Click on **Buy Now**
 
- ![image alt text](image_19.png)
+ ![image alt text](./images/image_19.png)
 m.	Confirm the configuration then click on **Activate**
- ![image alt text](image_20.png)
+ ![image alt text](./images/image_20.png)
 n.	Click on **Console**
 
- ![image alt text](image_21.png)
+ ![image alt text](./images/image_21.png)
 o.	Check that your ECS instance running the FlexGW VPN gateway is up and running
 
 p.	Note down the Internet IP Address once it is in Running state. This is the address you will use in Google Cloud to peer with to bring up your tunnel.
-![image alt text](image_22.png) 
+![image alt text](./images/image_22.png) 
 
 Step 2	Configure the FlexGW VPN Gateway
 a.	In a separate browser tab enter https://<Internet_IP_Address_of_FlexGW_VPN>
 You will be presented with the FlexGW login portal
- ![image alt text](image_23.png)
+ ![image alt text](./images/image_23.png)
 
 b.	Enter the access credentials using username "root" and the password you wrote down during the installation of the FlexGW VPN software.  Click on Login. 
  		You should now be presented with the FlexGW homepage:
-![image alt text](image_24.png)
+![image alt text](./images/image_24.png)
  
 c.	Click on **Create Tunnel**
- ![image alt text](image_25.png)
+ ![image alt text](./images/image_25.png)
 
 d.	Configure the Tunnel settings
-![image alt text](image_26.png)
+![image alt text](./images/image_26.png)
  
 The following settings must be configured (you may leave other options as default)
 1)	**Tunnel ID** - Enter the Tunnel ID (Ensure the ID is consisted on both sides)
@@ -224,7 +224,7 @@ The following settings must be configured (you may leave other options as defaul
 e.	Move to the next section (eg: Google Cloud VPN Configuration) to gather Remote ID & Remote Subnet from GCP and return here to proceed with Step 3 below.
 
 Step 3	Enter the **Remote IP** and **Remote Subnet** details here
- ![image alt text](image_27.png)
+ ![image alt text](./images/image_27.png)
 Step 4	Click on Save
  
 
@@ -250,22 +250,22 @@ d.	**Region **– us-east1
 e.	**IP Address **– Click Create IP Address
 i.	Provide the Name and description and Click **Reserve**
 
-![image alt text](image_32.png)
+![image alt text](./images/image_32.png)
 Step 4	 
- ![image alt text](image_33.png)
+ ![image alt text](./images/image_33.png)
 
 Step 5	Notice that a public IP address is generated. Note down the public IP address.  You will need this when you go back to the FlexGW VPN configuration tool to complete the VPN setup in Alibaba.
-![image alt text](image_34.png)
+![image alt text](./images/image_34.png)
  
 Step 6	Scroll down to **Local subnetworks **and select an available local subnetwork (eg: 10.142.0.0/20). Click OK. 
- ![image alt text](image_35.png)
+ ![image alt text](./images/image_35.png)
 
 
 Step 7	Return to the Alibaba FlexGW VPN Configuration wizard to complete                                                     the Alibaba Cloud VPN Configuration then come back to this step to complete the Google Cloud VPN configuration. 
 
 Step 8	Ensure that the FlexGW VPN Tunnel is created
 
- ![image alt text](image_36.png)
+ ![image alt text](./images/image_36.png)
 
 Step 9	Configure and complete the Tunnel settings in GCP
 
@@ -275,7 +275,7 @@ The following settings must be configured (you may leave other options as defaul
 3)	**Shared secret **– PSK configured on FlexGW VPN Tunnel (eg: "letmein")
 4)	**Remote network IP ranges **– Enter Alibaba VSwitch CIDR (eg: 192.168.100.0/24)
 **Local Subnet **– Select Default
-![image alt text](image_37.png)
+![image alt text](./images/image_37.png)
 
 
 Step 10	Click on **Create **
@@ -285,16 +285,16 @@ Once complete the VPN will attempt to connect. If the VPN successfully connects,
 
 Step 11	Ensure that the VPN Tunnel is Up on Google Cloud 
  
-![image alt text](image_38.png)
+![image alt text](./images/image_38.png)
 Step 12	Ensure that the VPN Tunnel is Up on Alibaba Cloud 
-![image alt text](image_39.png)
+![image alt text](./images/image_39.png)
  
 
 Step 13	 In order to route traffic from Alibaba VPC to Google Cloud via IPsec tunnel, you have to add a custom route entry for the VSwitch subnet. From the Alibaba Cloud Management Console main page:
 a.	Click on Virtual Private Cloud > VPC > Your VPC ID/Name > **VRouter**
 b.	Click on **Add Route Entry**
 
- ![image alt text](image_40.png)c.	Configure the route settings
+ ![image alt text](./images/image_40.png)c.	Configure the route settings
 
 The following must be configured:
 
@@ -302,8 +302,8 @@ The following must be configured:
 2)	**Next Hop Type **– ECS Instance
 3)	**ECS Instance **– Select the FlexGW VPN Instance
 
- ![image alt text](image_41.png)
-![image alt text](image_42.png) 
+ ![image alt text](./images/image_41.png)
+![image alt text](./images/image_42.png) 
 
 Configuration - Verification
 
@@ -317,11 +317,11 @@ Below is an example of a functional tunnel passing ICMP packets between a virtua
 
 Alibaba ECS virtual machine pinging the virtual machine in GCE
  
-![image alt text](image_43.png)
+![image alt text](./images/image_43.png)
 GCE virtual machine pinging the virtual machine in Alibaba Cloud
- ![image alt text](image_44.png)
+ ![image alt text](./images/image_44.png)
 Basic Traffic Flow Displaying in FlexVPN GW Flow Portal
-![image alt text](image_45.png) 
+![image alt text](./images/image_45.png) 
 
- ![image alt text](image_46.png)
+ ![image alt text](./images/image_46.png)
 
