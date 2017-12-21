@@ -1,10 +1,22 @@
-Google Cloud VPN Interop Guide 
+---
+title: How to Set Up VPN between Alibaba Cloud and Google Cloud VPN 
+description: Learn how to build site-to-site IPSEC VPN between Alibaba Cloud and Google Cloud VPN.
+author: David Lin
+tags: Compute Engine, Cloud VPN, Alibaba
+date_published: 2017-12-21
+---
+
+This guide walks you through the process to configure the FlexVPN Gateway in Alibaba Cloud for
+integration with the [Google Cloud VPN Services][cloud_vpn]. This information is
+provided as an example only. Please note that this guide is not meant to be a
+comprehensive overview of IPsec and assumes basic familiarity with the IPsec
+protocol. Users should verify this information via testing.
+
+[cloud_vpn]: https://cloud.google.com/compute/docs/vpn/overview
+
 Using Cloud VPN with Alibaba Cloud Virtual Router 
 
  ![image alt text](./images/image_0.png)
-
-Disclaimer: This interoperability guide is intended to be informational in nature and is an example only. Customers should verify this information via testing.
-
 
 Contents
 Introduction	3
