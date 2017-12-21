@@ -7,7 +7,7 @@ date_published: 2017-12-21
 ---
 
 This guide walks you through the process to configure the FlexVPN Gateway in Alibaba Cloud for
-integration with the [Google Cloud VPN Services][cloud_vpn]. This information is
+integration with [Google Cloud VPN Services][cloud_vpn]. This information is
 provided as an example only. Please note that this guide is not meant to be a
 comprehensive overview of IPsec and assumes basic familiarity with the IPsec
 protocol. Users should verify this information via testing.
@@ -27,10 +27,10 @@ Configuration - Google Cloud	21
 Configuration - Verification	29
 
 
-Introduction
+## Introduction
 This guide walks you through the process of configuring the Alibaba Virtual Private Cloud (VPC) Network Gateway (also referred to as the VRouter within the Alibaba console) for integration with the [Google Cloud VPN service](https://cloud.google.com/compute/docs/vpn/). This information is provided as an example only.  If utilizing this guidance to configure your Alibaba Cloud implementation, be sure to substitute the correct IP information for your environment. Also note, this guide is not meant to be a comprehensive overview of IPsec and assumes users have a basic familiarity with the IPsec protocol.
 
-Topology
+## Topology
 This guide will describe the following VPN topology:
 
 1.	A site-to-site policy based IPSec VPN tunnel configuration using static routing
@@ -42,7 +42,7 @@ This guide will describe the following VPN topology:
 
 
  
-Preparation
+## Preparation
 
 Overview
 
@@ -65,7 +65,7 @@ The IPsec connectivity will utilize a pre-shared key (PSK) that you provide for 
 
 
  
-Getting Started
+## Getting Started
 
 The first step is to establish the base networking environment in Alibaba Cloud. Alibaba provides [documentation ](https://www.alibabacloud.com/help/doc-detail/53902.htm)for getting started with Alibaba Cloud networking. The basic concepts to understand are:
 
@@ -87,7 +87,7 @@ Each entry in a route table is a route entry. A route entry specifies the next h
 A route table is a list of route entries in a VRouter.
 
 
-Configuration - Alibaba Cloud
+## Configuration - Alibaba Cloud
 Task 1: Alibaba Cloud VPC Configuration
 
 To get started, login to the Alibaba Management Console and select Virtual Private Cloud from the **Products & Services **menu on the default homepage. New Alibaba accounts will have a default VPC. 
@@ -101,9 +101,6 @@ Step 1	Click "VPC" in the left pane window, followed by the Region (eg: US East 
 ![image alt text](./images/image_3.png)
 Step 2	Configure the VPC settings:
 ![image alt text](./images/image_4.png)
-
-
- 
 
 The following settings are to be configured:
 1)	**VPC Name **- Enter the name of the VPC
@@ -130,23 +127,7 @@ The VPC configuration is now complete.
 
  ![image alt text](./images/image_8.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Task 2: Alibaba Cloud VPN Configuration - Configuring Alibaba IPSec VPN Gateway
-
 
 Now that we have created a VPC and VSwitch, we will configure an IPSec VPN Gateway.
 We will use **FlexGW IPsec VPN on CentOS**, a popular open source web-based VPN gateway available in the Alibaba Marketplace.  
@@ -317,7 +298,7 @@ The following must be configured:
  ![image alt text](./images/image_41.png)
 ![image alt text](./images/image_42.png) 
 
-Configuration - Verification
+## Configuration - Verification
 
 With the site to site now VPN online, the tunnel is ready for testing. 
 
